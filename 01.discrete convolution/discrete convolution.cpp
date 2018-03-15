@@ -12,24 +12,12 @@ int main()
     int filter_Long = 3;
     float *p_Output = NULL;
     
-    //int L_bior68 = 0;
-
-    //float bior68_Lo[18]={0,0.0019,-0.0019,-0.0170,0.0119,0.0497,-0.0773,
-                         // -0.0941,0.4208,0.8259,0.4208,-0.0941,-0.0773,
-                          //0.0497,0.0119,-0.0170,-0.0019,0.0019};
-    
     float data[10] = {0,1,2,3,4,5,6,7,8,9};
     float filter[3] = {1,2,1};
     float *p_Data;
     float *p_Filter;
     p_Data = data;
     p_Filter = filter;
-
-
-            //    0,1,2,3,4,5,6,7,8,9,
-            //    0,1,2,3,4,5,6,7,8,9,
-            //    0,1,2,3,4,5,6,7,8,9,
-            //    0,1,2,3,4,5,6,7,8,9};
 
     p_Output = new float[data_Long + filter_Long - 1];
     
@@ -46,7 +34,7 @@ int main()
         
     }
 
-//    delete[] p_Output;
+    delete[] p_Output;
 
 
     return 0;
@@ -92,7 +80,6 @@ void convolution(float *p_Data,float *p_Filter, float*p_Output,int data_Long,int
         {
             temp += *(p_Data + i -j) * (*(p_Filter + j));
             *(p_Output+i)  = temp;
-        //    printf("%f\n",*(p_Output + i));
         }
     }
 
